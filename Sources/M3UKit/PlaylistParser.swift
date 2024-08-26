@@ -304,6 +304,12 @@ public final class PlaylistParser {
     if let groupTitle = attributesGroupTitleRegex.firstMatch(in: rawString) {
       attributes.groupTitle = groupTitle
     }
+    if let httpUserAgent = httpUserAgentRegex.firstMatch(in: input) {
+      attributes.httpUserAgent = httpUserAgent
+    }
+    if let httpReferrer = httpReferrerRegex.firstMatch(in: input) {
+      attributes.httpReferrer = httpReferrer
+    }
     return attributes
   }
 
@@ -342,4 +348,6 @@ public final class PlaylistParser {
   internal let attributesChannelNumberRegex: RegularExpression = #"tvg-chno=\"(.?|.+?)\""#
   internal let attributesShiftRegex: RegularExpression = #"tvg-shift=\"(.?|.+?)\""#
   internal let attributesGroupTitleRegex: RegularExpression = #"group-title=\"(.?|.+?)\""#
+  internal let httpUserAgentRegex: RegularExpression = #"http-user-agent=\"(.?|.+?)\""#
+  internal let httpReferrerRegex: RegularExpression = #"http-referrer=\"(.?|.+?)\""#
 }
