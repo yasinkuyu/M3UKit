@@ -304,10 +304,10 @@ public final class PlaylistParser {
     if let groupTitle = attributesGroupTitleRegex.firstMatch(in: rawString) {
       attributes.groupTitle = groupTitle
     }
-    if let httpUserAgent = httpUserAgentRegex.firstMatch(in: input) {
+    if let httpUserAgent = httpUserAgentRegex.firstMatch(in: rawString) {
       attributes.httpUserAgent = httpUserAgent
     }
-    if let httpReferrer = httpReferrerRegex.firstMatch(in: input) {
+    if let httpReferrer = httpReferrerRegex.firstMatch(in: rawString) {
       attributes.httpReferrer = httpReferrer
     }
     return attributes
